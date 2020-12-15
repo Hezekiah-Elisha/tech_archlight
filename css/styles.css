@@ -12,6 +12,8 @@ p{
 }
 div a{
   font-family: 'Russo One', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
