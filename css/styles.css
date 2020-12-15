@@ -7,6 +7,9 @@
 .navbar{
   background-color: #0f2026;
 }
+p{
+  font-family: 'Open Sans', sans-serif;
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
