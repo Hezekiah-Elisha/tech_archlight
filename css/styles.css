@@ -12,8 +12,12 @@ p{
 }
 div a{
   font-family: 'Russo One', sans-serif;
-  text-transform: uppercase;
   font-weight: bold;
+  /* color: #fff; */
+}
+/* footer color #36474e */
+.footer{
+  background-color: #36474e;
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
