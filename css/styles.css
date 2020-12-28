@@ -10,19 +10,46 @@
 p{
   font-family: 'Open Sans', sans-serif;
 }
-div a{
+.navbar-brand{
   font-family: 'Russo One', sans-serif;
   font-weight: bold;
   /* color: #fff; */
 }
+
 /* footer color #36474e */
 .footer{
   background-color: #36474e;
+  color: #fff;
+  bottom: 0;
+
+}
+.footer .container{
+  margin-bottom: 0px;
+}
+
+.container-1{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.aside{
+  background-color: #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+div h2{
+  padding: 2px;
+  background: #ccf;
+  border-radius: 5px;
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
+  .footer{
+    position: fixed;
+    height: 110px;
+    bottom: 0;
+    width: 100%;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -32,7 +59,9 @@ div a{
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width:991.98px) {
-
+  .footer-med+p{
+    align-content: center;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
