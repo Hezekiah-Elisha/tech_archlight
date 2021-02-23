@@ -22,6 +22,10 @@ p{
   padding-right: 0;
 }
 
+h3{
+  font-family: 'Open Sans', sans-serif;
+}
+
 body{
   background-color: #2c5c6d;
   color: #fff;
@@ -40,6 +44,27 @@ body::-webkit-scrollbar-thumb {
   outline: 1px solid slategrey;
   border-radius: 5px;
 }
+.code-snip{
+  background-color: black;
+  border-radius: 4px;
+  padding: 10px;
+  /* clear: both; */
+  overflow: hidden;
+}
+code{
+  color: white;
+}
+.code-snip button{
+  float: right;
+  color: grey;
+  font-size: .8em;
+}
+.code-snip button:hover{
+  float: right;
+  background-color: #0f2026;
+  color: white;
+}
+
 
 #dev{
   height: 200px;
@@ -54,7 +79,7 @@ body::-webkit-scrollbar-thumb {
 .card{
   background-color: #3a7a92;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: all 0.7s;
+  transition: all 0.3s;
   font-style: italic;
   width: 100% !important;
 }
@@ -153,23 +178,25 @@ footer .container{
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  /* .footer{
-    position: fixed;
-    height: 135px;
-    bottom: 0;
-    width: 100%;
-  } */
+  .card{
+    height: 100px;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px ) and (max-width:119.98px) {
-
+  .card{
+    height: 20%;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width:991.98px) {
   .footer-med+p{
     align-content: center;
+  }
+  .card{
+    height: 100px;
   }
 
 }
