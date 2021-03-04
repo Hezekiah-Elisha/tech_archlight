@@ -1,6 +1,6 @@
 *{
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'PT Sans', sans-serif;
 }
 html,body{
   margin: 0;
@@ -10,7 +10,9 @@ html,body{
   background-color: #7ed957;
 }
 .navbar{
-  background-color: #0f2026;
+  /* background-color: #0f2026; */
+  background-color: rgba(0, 0, 0, 0.15);
+
 }
 p{
   font-family: 'Open Sans', sans-serif;
@@ -44,6 +46,36 @@ body::-webkit-scrollbar-thumb {
   outline: 1px solid slategrey;
   border-radius: 5px;
 }
+
+.intro-pic{
+  background-image: url("../images/firstImage.jpg");
+  min-height: 30vh;
+  border-radius: 4px;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* .intro-pic p{
+  font-size: 7px;
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+} */
+
+.intro-pic .message{
+  font-family: 'PT Sans', sans-serif;
+  background-color: rgba(15, 32, 38,0.5);
+  border-radius: 4px;
+
+
+  font-size: 2em;
+  padding: 10px;
+
+}
+
 .code-snip{
   background-color: black;
   border-radius: 4px;
@@ -63,6 +95,14 @@ code{
   float: right;
   background-color: #0f2026;
   color: white;
+}
+
+article p{
+  background-color: rgba(15, 32, 38,0.5);
+  padding: 5px;
+  font-family: 'PT Sans', sans-serif;
+  border-radius: 4px;
+  margin-top: 10px;
 }
 
 
@@ -131,6 +171,7 @@ code{
   border-radius: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
+  font-family: 'PT Sans', sans-serif;
 }
 .aside-item{
   width: 100%;
@@ -153,6 +194,7 @@ div h2{
   background: #4999b6;
   border-radius: 5px;
   /* margin-left: 2px; */
+  font-family: 'Russo One', sans-serif;
 }
 
 img{
