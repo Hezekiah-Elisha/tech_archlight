@@ -108,10 +108,17 @@ article p{
 
 #dev{
   height: 200px;
-  width: 200px;
-  border: 6px solid #2c5c6d;
-  margin-left:08%;
-  /* flex- */
+  width: 300px;
+  /* border: 6px solid #2c5c6d; */
+  /* margin-left:08%; */
+
+  border-radius: 4px;
+}
+
+#aside-img {
+  opacity: 0.4;
+  font-size: 0.6em;
+  font-family: 'PT Sans', sans-serif;
 }
 .carosel{
   margin-top: 10px;
@@ -140,7 +147,7 @@ article p{
   margin-bottom: 1px;
   /* position: fixed; */
   width: 100%;
-  min-height:100%;
+  /* min-height:100%; */
 }
 
 .footer .container{
@@ -156,8 +163,6 @@ article p{
 .icon:hover{
   opacity:0.2;
 }
-
-
 
 .container-1{
   padding-left: 50px;
