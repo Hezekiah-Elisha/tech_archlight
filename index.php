@@ -16,7 +16,7 @@
   <!-- start of navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark" >
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">The Tech Archlight</a>
+      <a class="navbar-brand" href="index.php">The Tech Archlight</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -26,14 +26,17 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
 
-          <li class="nav-item left">
+          <!-- <li class="nav-item left">
             <a class="nav-link disabled" href="login.html">login</a>
-          </li>
+          </li> -->
         </ul>
-        <form class="d-flex">
+        <span>
+          <a class="nav-link" href="login.html">login</a>
+        </span>
+        <!-- <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        </form> -->
       </div>
     </div>
   </nav>

@@ -76,6 +76,15 @@ body::-webkit-scrollbar-thumb {
 
 }
 
+.collapse span{
+  float: left;
+}
+
+.collapse span a{
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
 .code-snip{
   background-color: black;
   border-radius: 4px;
