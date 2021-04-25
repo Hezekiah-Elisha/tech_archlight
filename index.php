@@ -1,10 +1,16 @@
+<?php
+
+    session_start();
+    session_status();
+
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0f2026">
-  <title>Tech Archlight :: Home</title>
+  <title>The Tech Archlight :: Home</title>
   <link rel="icon" href="images/favicon1.png" type="image/gif" sizes="16x16">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -31,7 +37,17 @@
           </li> -->
         </ul>
         <span>
-          <a class="nav-link" href="login.html">login</a>
+          <?php
+            if(isset($_SESSION['loggedin'])){
+              echo "<a class='nav-link' href='auth/profile.php'>Hi, ".$_SESSION['name']."</a>"."<a class='nav-link' href='logout.php'>Log Out</a>";
+              // header('Location : auth/login.html');
+              // exit;
+            }else{
+              echo "<a class='nav-link' href='auth/register.html'>register</a>";
+            }
+
+           ?>
+
         </span>
         <!-- <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

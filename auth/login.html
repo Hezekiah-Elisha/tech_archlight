@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#0f2026">
     <title>Tech Archlight :: Log In</title>
     <link rel="icon" href="images/favicon.png" type="image/gif" sizes="16x16">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   </head>
@@ -55,17 +55,12 @@
     <!-- end of nav -->
 
     <div class="col-md-12 aside">
-      <form class="login-form" action="index.html" method="post">
-        <label for="" class="text-lg-center">login Form</label>
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing
-           elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p></p>
+      <form class="login-form" action="authentication.php" method="post">
+        <input type="text" name="username" id="username" placeholder="Username" value="" required><br>
+        <input type="password" name="password" id="password" placeholder="Password" value="" required><br><br>
+        <input type="submit" class="btn btn-primary" name="" value="submit">
       </form>
+      A new member? <a href="register.html">Register here</a>
     </div>
 
 
@@ -110,6 +105,6 @@
   </div>
 
   <!--bootstrap js-->
-  <script src="js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="../js/bootstrap.min.js" charset="utf-8"></script>
   </body>
 </html>
