@@ -228,9 +228,29 @@ img{
   border-radius: 5px;
   background-color: #36474e;
 }
+#editor{
+  width:20px;
+  color: black !important;
+}
 footer .container{
   margin-bottom: 0px;
 }
+
+.dashboard{
+    display:flex;
+    flex-direction: row;
+}
+.dash-main{
+  flex:0.8;
+  background-color: rgba(36, 15, 15, 0.4);
+  height: 92vh;
+}
+.dash-details{
+  flex:3.2;
+  /* background-color: #ccf; */
+  height: 92vh;
+}
+
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {

@@ -62,7 +62,7 @@ $stmt -> close();
           <span>
             <?php
               if($_SESSION['loggedin']){
-                echo "hi, ".$_SESSION['name'];
+                echo "hi, ".$_SESSION['name']."<span><a class='nav-link' href='../dashboard/index.php'>Dashboard</a></span>";
 
               }
              ?>
@@ -95,6 +95,8 @@ $stmt -> close();
         </tr>
       </table>
     </div>
+
+    <a href="../dashboard/">Dashbord</a>
 
 
   </body>

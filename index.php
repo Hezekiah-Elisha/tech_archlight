@@ -39,11 +39,11 @@
         <span>
           <?php
             if(isset($_SESSION['loggedin'])){
-              echo "<a class='nav-link' href='auth/profile.php'>Hi, ".$_SESSION['name']."</a>"."<a class='nav-link' href='logout.php'>Log Out</a>";
+              echo "<span><a class='nav-link' href='auth/profile.php'>Hi, ".$_SESSION['name']."</a></span>"."<span><a class='nav-link' href='logout.php'>Log Out</a></span>";
               // header('Location : auth/login.html');
               // exit;
             }else{
-              echo "<a class='nav-link' href='auth/register.html'>register</a>";
+              echo "<span><a class='nav-link' href='auth/login.html'>Login</a></span>"."<span><a class='nav-link' href='auth/register.html'>register</a></span>";
             }
 
            ?>
