@@ -41,17 +41,49 @@
   <main>
     <article class="">
       <h1>Where learning meets reality</h1>
+      <p>Tech archlight is a website designed to help programming newbies to keep up with the current trends and to unblock them from common challenges or bugs that are faced by many users accross the programming community. At tech archlight, we also help any request placed by any user to help them get unblocked making the website more interactive and efficient as intended. Check out the developer's portfolio...<a href="https://hezekiah-elisha.github.io/portfolio/" target="_blank">Read More...</a></p>
+      <p>"It is only when they go wrong that machines remind you how powerful they are.” a quote from Clive James' book, <em>The Crystal bucket</em>. The quote has and will always show the need for a technologist of any age to always keep track of the current trand of fixing errors in one way of the other. In many ways during the commence of my career I have had the challenge of finding out how to fix simple bugs in my computer and to my codes too.
+      The process of solving these challenges had quite fatal effects to my results. </p>
     </article>
     <aside class="">
-
+      <form class="" action="index.html" method="post">
+        <p>search here:</p>
+        <input type="text" name="" value="" placeholder="search">
+      </form>
+      <div class="topics">
+        <h2>Available topics</h2>
+        <ul>
+          <li>html</li>
+          <li>care</li>
+          <li>Lorem</li>
+          <li>Ipsum</li>
+        </ul>
+      </div>
     </aside>
   </main>
   <footer>
+    <div class="parts">
+      <div class="parta">
+        <p class="text-lg-left text-sm-center text-md-right">This is a website,<em>Managed and Maintained by Hezekiah Elisha</em>, dedicated to share technology knowledge whenever
+          required or acquired. Our main goal is to improve technology use in any
+          field covered</p>
+      </div>
+      <hr>
+      <div class="partb">
+        <p>Find us on social media:</p>
+      </div>
+      <hr>
+    </div>
+    <div class="last">
+      <p><span>&copy;</span>2021 The Tech Archlight. All rights served</p>
+    </div>
+
 
   </footer>
 
     <!-- <div class="message col-lg-4 col-md-6 col-sm-12 col-xs-12">
       <p>Welcome to <span>The Tech Archlight</span></p>
+
     </div> -->
     <!-- <p><span>Photo by <a href="https://unsplash.com/@alexkixa?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alexandre Debiève</a> on <a href="https://unsplash.com/s/photos/technology?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p>
   </div>
@@ -68,7 +100,6 @@
             </div>
         </div>
         <div class="col-lg-6 col-md-12">
-
 
           <article class="">
             <p>"It is only when they go wrong that machines remind you how powerful they are.” a quote from Clive James' book, <em>The Crystal bucket</em>. The quote has and will always show the need for a technologist of any age to always keep track of the current trand of fixing errors in one way of the other. In many ways during the commence of my career I have had the challenge of finding out how to fix simple bugs in my computer and to my codes too.
