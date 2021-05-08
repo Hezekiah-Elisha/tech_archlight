@@ -12,57 +12,48 @@
   <meta name="theme-color" content="#0f2026">
   <title>The Tech Archlight :: Home</title>
   <link rel="icon" href="images/favicon1.png" type="image/gif" sizes="16x16">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Russo+One&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="intro-pic">
-  <!-- start of navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark" >
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.php">The Tech Archlight</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-
-          <!-- <li class="nav-item left">
-            <a class="nav-link disabled" href="login.html">login</a>
-          </li> -->
-        </ul>
-        <span>
-          <?php
-            if(isset($_SESSION['loggedin'])){
-              echo "<span><a class='nav-link' href='auth/profile.php'>Hi, ".$_SESSION['name']."</a></span>"."<span><a class='nav-link' href='logout.php'>Log Out</a></span>";
-              // header('Location : auth/login.html');
-              // exit;
-            }else{
-              echo "<span><a class='nav-link' href='auth/login.html'>Login</a></span>"."<span><a class='nav-link' href='auth/register.html'>register</a></span>";
-            }
-
-           ?>
-
-        </span>
-        <!-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
-      </div>
+  <header class="navbar">
+    <div class="brand">
+      <span>The Tech Archlight</span>
     </div>
-  </nav>
-  <!-- end of nav -->
+    <div class="links">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Testing</a></li>
+        <?php
+          if(isset($_SESSION['loggedin'])){
+            echo "<li><a class='nav-link' href='auth/profile.php'>Hi, ".$_SESSION['name']."</a></li>"."<li><a class='nav-link' href='logout.php'>Log Out</a></li>";
+          // header('Location : auth/login.html');
+          // exit;
+          }else{
+            echo "<li><a class='nav-link' href='auth/login.html'>Login</a></li>"."<li><a class='nav-link' href='auth/register.html'>register</a></li>";
+          }
+        ?>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <article class="">
+      <h1>Where learning meets reality</h1>
+    </article>
+    <aside class="">
 
+    </aside>
+  </main>
+  <footer>
+
+  </footer>
 
     <!-- <div class="message col-lg-4 col-md-6 col-sm-12 col-xs-12">
       <p>Welcome to <span>The Tech Archlight</span></p>
     </div> -->
-    <!-- <p><span>Photo by <a href="https://unsplash.com/@alexkixa?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alexandre Debiève</a> on <a href="https://unsplash.com/s/photos/technology?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p> -->
+    <!-- <p><span>Photo by <a href="https://unsplash.com/@alexkixa?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alexandre Debiève</a> on <a href="https://unsplash.com/s/photos/technology?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p>
   </div>
 
   <div id="main-content" class="container-1">
@@ -85,7 +76,7 @@
               <!-- <div class="code-snip">
                 <code id="codeCopy">Here is a sample, I dont know why I cant see it. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</code><br>
                 <button type="button" name="button" class="btn btn-outline" onclick="copy()">Copy to clipboard</button>
-              </div> -->
+              </div>
 
 
             </ul>
@@ -120,13 +111,13 @@
                 <label class="form-check-label" for="spam">Receive our updates</label> <br>
                 <button type="button" class="btn btn-primary" name="button">submit</button>
                 <br><br>
-              </form> -->
+              </form>
             </div>
         </div>
       </div>
   </div>
 
-    <!-- footer -->
+    <!-- footer
     <div class="footer">
       <div class="container">
         <div class="row">
@@ -157,9 +148,11 @@
       <p><span>&copy;</span>2021 The Tech Archlight. All rights served</p>
     </center>
   </div>
+-->
+
 
   <!--bootstrap js-->
-  <script src="js/bootstrap.min.js" charset="utf-8"></script>
+  <!-- <script src="js/bootstrap.min.js" charset="utf-8"></script> -->
   <!-- <script src="js/ajax-utils.js" charset="utf-8"></script> -->
   <script src="js/script.js" charset="utf-8"></script>
 </body>
