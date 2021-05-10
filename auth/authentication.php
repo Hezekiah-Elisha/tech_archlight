@@ -46,11 +46,12 @@
 
       }else{
         // insorrect password
-        echo "incorrect password";
+        header('Location: error.php?subject=incorrect%20password&web=login.php');
+
       }
 
     }else{
-      echo "Incorrect username or password";
+      header('Location: error.php?subject=incorrect%20password%20or%20Username&web=login.php');
     }
 
     $stmt -> close();

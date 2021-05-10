@@ -1,15 +1,19 @@
 <?php
   session_start();
+  $host = 'localhost';
+	$database_username = 'root';
+	$database_password = '';
+	$database = 'the_tech_archlight';
+
+	$conn = mysqli_connect($host,$database_username,$database_password,$database);
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Publich a Post</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="icon" href="images/favicon1.png" type="image/gif" sizes="16x16">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>Dashboard :: Tech Archlight</title>
+    <link rel="icon" href="../images/favicon1.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Russo+One&display=swap" rel="stylesheet">
@@ -21,50 +25,101 @@
 
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark" >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">The Tech Archlight</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-
-            <!-- <li class="nav-item left">
-              <a class="nav-link disabled" href="login.html">login</a>
-            </li> -->
-          </ul>
-          <span>
-            <?php
-              if($_SESSION['loggedin']){
-                echo "<span>hi, ".$_SESSION['name']."</span>";
-
-              }
-             ?>
-          </span>
-          <span>
-            <a class="nav-link" href="../logout.php">Logout</a>
-          </span>
-          <!-- <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> -->
-        </div>
-      </div>
-    </nav>
-
-    <div class="dashboard">
-      <div class="dash-main">
-
-      </div>
-      <div class="dash-details">
-
-      </div>
+    <header class="navbar">
+    <div class="brand">
+      <span>The Tech Archlight</span>
     </div>
+    <div class="links">
+      <ul>
+        <li><a href="../index.php">Home</a></li>
 
+        <?php
+          if(isset($_SESSION['loggedin'])){
+            echo "<li><a class='' href='../auth/profile.php'>Hi, ".$_SESSION['name']."</a></li>"."<li><a class='' href='../logout.php'>Log Out</a></li>";
+          // header('Location : auth/login.html');
+          // exit;
+          }else{
+            echo "<li><a class='nav-link' href='../auth/login.html'>Login</a></li>"."<li><a class='nav-link' href='../auth/register.html'>register</a></li>";
+          }
+        ?>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <article class="">
+      <h2>Available Blogs</h2>
+      <?php
+        $query = "SELECT `username`, `title`, `description`, `article`, `topic`, `time_published` FROM `content`";
+        $result = mysqli_query($conn, $query);
+
+        if(mysqli_num_rows($result)>0){
+          echo "<div class='blog-detail'>";
+          while($row = mysqli_fetch_assoc($result)){
+            echo"<div class='blog-item'><br>Author: ".$row['username']
+            ."<br>Blog title: ".$row['title']
+            ."<br>Description: ".$row['description']
+            ."<br>Article: ".$row['article']
+            ."<br>Topic: ".$row['topic']
+            ."<br>Day Published: ".$row['time_published']."</div>";
+          }
+          echo "<button name='delete' >Delete</button>";
+          echo "</div>";
+        }else{
+            echo "no content yet";
+            echo "";
+        }
+
+       ?>
+    </article>
+
+    <aside class="">
+      <div class="topics">
+        <h3>Want to publish a blog? Click here:</h3>
+        <ul>
+          <li><a href='blog.php' target='_blank'>BLOG</a></li>
+        </ul>
+      </div>
+      <h3>Available Bloggers</h3>
+      <div class="topics">
+      <?php
+      $queryA = "SELECT `username` FROM `accounts`";
+      $result = mysqli_query($conn, $queryA);
+
+      if(mysqli_num_rows($result)>0){
+        echo "<ul>";
+
+        while($row1 = mysqli_fetch_assoc($result)){
+          echo"<li>"
+          .$row1['username']
+          ."</li>";
+        }
+        echo "</ul>";
+
+      }else{
+          echo "No authors here";
+      }
+       ?>
+     </div>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="parts">
+      <div class="parta">
+        <p class="">This is a website,<em>Managed and Maintained by Hezekiah Elisha</em>, dedicated to share technology knowledge whenever
+          required or acquired. Our main goal is to improve technology use in any
+          field covered</p>
+      </div>
+      <hr>
+      <div class="partb">
+        <p>Find us on social media:</p>
+      </div>
+      <hr>
+    </div>
+    <div class="last">
+      <p><span>&copy;</span>2021 The Tech Archlight. All rights served</p>
+    </div>
+  </footer>
 
   </body>
 </html>

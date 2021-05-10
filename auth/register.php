@@ -1,77 +1,71 @@
 <?php
-  $host = 'localhost';
-  $username = 'root';
-  $password = '';
-  $database = 'the_tech_archlight';
-
-  $conn = mysqli_connect($host, $username, $password, $database);
-
-  if(mysqli_connect_errno()){
-    //if there is any error with the connection, stop the script and display the error...
-    exit('Failed to connect to MySQL: '. mysqli_connect_errno());
-  }
-
-  // checking if data was subbmitted
-  if(!isset($_POST['username'],$_POST['password'],$_POST['email'])){
-    // no data subbmitted
-    exit('no data submitted');
-  }
-
-  // making sure the registration submitted are not Empty
-  if(empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email'])){
-    // one or more values are empty
-    exit('Please complete the registration form');
-  }
-
-  // to confirm the length of the password
-  if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 5) {
-	   exit('Password must be between 5 and 20 characters long!');
-  }
-
-  // to remove charcters from the input
-  if (preg_match('/^[a-zA-Z0-9]+$/', $_POST['username']) == 0) {
-    exit('Username is not valid!');
-  }
-
-  //to validate the email
-  if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-	   exit('Email is not valid!');
-  }
-
-  //we need to check if the account with that username exists
-  if ($stmt = $conn -> prepare('SELECT id, password FROM accounts WHERE username = ?')){
-    //bind parameters
-    $stmt -> bind_param('s', $POST['username']);
-    $stmt -> execute();
-    $stmt -> store_result();
-
-    // store the result so we can check if the account exists
-    if($stmt -> num_rows > 0){
-      // username already exists
-      echo "username exists, please choose another";
-    }else{
-
-
-      if($stmt = $conn -> prepare('INSERT INTO accounts (username, password, email) VALUES (?,?,?)')){
-        // PASSWORD ENCRIPTION
-        $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
-        $stmt -> bind_param('sss', $_POST['username'], $password, $_POST['email'] );
-        $stmt -> execute();
-        echo 'You have successfully registered, you can now log in! Thank you for choosing us';
-
-      }else{
-        // something is wrong with your sql statement
-        echo "Could not prepare statement";
-      }
-    }
-
-    $stmt -> close();
-
-  }else{
-    echo "could not prepare statement!";
-  }
-
-  $conn -> close();
-
-
+  session_start();
  ?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="icon" href="images/favicon1.png" type="image/gif" sizes="16x16">
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Russo+One&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="navbar">
+    <div class="brand">
+      <span>The Tech Archlight</span>
+    </div>
+    <div class="links">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Testing</a></li>
+        <?php
+          if(isset($_SESSION['loggedin'])){
+            echo "<li><a class='' href='auth/profile.php'>Hi, ".$_SESSION['name']."</a></li>"."<li><a class='' href='../logout.php'>Log Out</a></li>";
+          // header('Location : auth/login.html');
+          // exit;
+          }else{
+            echo "<li><a class='' href='login.php'>LogIn</a></li>";
+          }
+        ?>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <article class="login">
+      <div class="form-l">
+        <form class="login-form" action="registerdet.php" method="post">
+          register here
+          <input type="email" name="email" id="email" placeholder="Email" value="" required><br>
+          <input type="text" name="username" id="username" placeholder="Username" value="" required><br>
+          <input type="password" name="password" id="password" placeholder="Password" value="" required><br><br>
+          <input type="submit" class="btn btn-primary" name="" value="submit">
+        </form>
+        already a member? <a href="login.php">login</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="parts">
+      <div class="parta">
+        <p class="">This is a website,<em>Managed and Maintained by Hezekiah Elisha</em>, dedicated to share technology knowledge whenever
+          required or acquired. Our main goal is to improve technology use in any
+          field covered</p>
+      </div>
+      <hr>
+      <div class="partb">
+        <p>Find us on social media:</p>
+      </div>
+      <hr>
+    </div>
+    <div class="last">
+      <p><span>&copy;</span>2021 The Tech Archlight. All rights served</p>
+    </div>
+  </footer>
+
+  </body>
+</html>

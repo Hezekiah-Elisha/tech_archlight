@@ -34,70 +34,81 @@ $stmt -> close();
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Profile</title>
-    <link rel="icon" href="images/favicon1.png" type="image/gif" sizes="16x16">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="icon" href="../images/favicon1.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Russo+One&display=swap" rel="stylesheet">
 
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark" >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">The Tech Archlight</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-
-            <!-- <li class="nav-item left">
-              <a class="nav-link disabled" href="login.html">login</a>
-            </li> -->
-          </ul>
-          <span>
-            <?php
-              if($_SESSION['loggedin']){
-                echo "hi, ".$_SESSION['name']."<span><a class='nav-link' href='../dashboard/index.php'>Dashboard</a></span>";
-
-              }
-             ?>
-          </span>
-          <span>
-            <a class="nav-link" href="../logout.php">Logout</a>
-          </span>
-          <!-- <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> -->
-        </div>
+    <header class="navbar">
+      <div class="brand">
+        <span>The Tech Archlight</span>
       </div>
-    </nav>
-    <h2>Profile Page</h2>
-    <div class="">
-      <p>Your Account details are below:</p>
-      <table>
-        <tr>
-          <th>UserName: </th>
-          <td><?=$_SESSION['name']  ?></td>
-        </tr>
-        <tr>
-          <th>Password :</th>
-          <td><?=$password ?></td>
-        </tr>
-        <tr>
-          <th>Email :</th>
-          <td><?=$email ?></td>
-        </tr>
-      </table>
-    </div>
+      <div class="links">
+        <ul>
+          <li><a href="../index.php">Home</a></li>
 
-    <a href="../dashboard/">Dashbord</a>
+          <?php
+            if(isset($_SESSION['loggedin'])){
+              echo "<li>Hi, ".$_SESSION['name']."</li>"."<li><a class='' href='../logout.php'>Log Out</a></li>";
+            // header('Location : auth/login.html');
+            // exit;
+            }else{
+              echo "<li><a class='' href='auth/login.html'>Login</a></li>"."<li><a class='nav-link' href='auth/register.html'>register</a></li>";
+            }
+          ?>
+        </ul>
+      </div>
+    </header>
 
+    <main>
+      <article class="form-l">
+        <h2>Profile Page</h2>
+        <div class="">
+          <p>Your Account details are below:</p>
+          <table>
+            <tr>
+              <th>UserName: </th>
+              <td><?=$_SESSION['name']  ?></td>
+            </tr>
+            <tr>
+              <th>Password :</th>
+              <td><?=$password ?></td>
+            </tr>
+            <tr>
+              <th>Email :</th>
+              <td><?=$email ?></td>
+            </tr>
+          </table>
+        </div>
+      </article>
+      <aside class="topics">
+        <ul>
+          <li><a href="../dashboard/">Dashbord</a></li>
+        </ul>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="parts">
+        <div class="parta">
+          <p class="">This is a website,<em>Managed and Maintained by Hezekiah Elisha</em>, dedicated to share technology knowledge whenever
+            required or acquired. Our main goal is to improve technology use in any
+            field covered</p>
+        </div>
+        <hr>
+        <div class="partb">
+          <p>Find us on social media:</p>
+        </div>
+        <hr>
+      </div>
+      <div class="last">
+        <p><span>&copy;</span>2021 The Tech Archlight. All rights served</p>
+      </div>
+    </footer>
 
   </body>
 </html>
