@@ -1,5 +1,11 @@
 <?php
   session_start();
+
+  if($_SESSION['name']==null){
+    header('Location: ../index.php');
+    exit();
+  }
+
   $host = 'localhost';
 	$database_username = 'root';
 	$database_password = '';
@@ -16,26 +22,21 @@
     <link rel="icon" href="../images/favicon1.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <div class="links">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Russo+One&display=swap" rel="stylesheet">
-    <style media="screen">
-      #editor{
-        /* color: #fff !important; */
-      }
-    </style>
-
+    <script src="https://use.fontawesome.com/7d4c5ce44e.js"></script>
   </head>
   <body>
     <header class="navbar">
     <div class="brand">
       <span>The Tech Archlight</span>
     </div>
-    <div class="links">
       <ul>
         <li><a href="../index.php">Home</a></li>
 
         <?php
           if(isset($_SESSION['loggedin'])){
-            echo "<li><a class='' href='../auth/profile.php'>Hi, ".$_SESSION['name']."</a></li>"."<li><a class='' href='../logout.php'>Log Out</a></li>";
+            echo "<li><a class='' href='../auth/profile.php'><i class='fa fa-id-badge'></i> Hi, ".$_SESSION['name']."</a></li>"."<li><a class='' href='../logout.php'>Log Out</a></li>";
           // header('Location : auth/login.html');
           // exit;
           }else{
@@ -69,6 +70,7 @@
             echo "";
         }
 
+
        ?>
     </article>
 
@@ -77,6 +79,7 @@
         <h3>Want to publish a blog? Click here:</h3>
         <ul>
           <li><a href='blog.php' target='_blank'>BLOG</a></li>
+
         </ul>
       </div>
       <h3>Available Bloggers</h3>
@@ -98,7 +101,20 @@
       }else{
           echo "No authors here";
       }
+      if ($_SESSION['name']=="hezekiah"){
+
+        echo "<form action='index.php' method='post'>
+           <h3>Delete a post</h3>
+           <input type='text' placeholder='topic' name='topicSearch'><br>
+           <input type='submit' class='' name='del' value='submit'>
+         </form>";
+      }
+      // function deleteContent($idea){
+      //
+      // }
        ?>
+
+
      </div>
     </aside>
   </main>
@@ -123,3 +139,21 @@
 
   </body>
 </html>
+<?php
+
+if(isset($_POST['del'])){
+  $idea = $_POST['topicSearch'];
+  $query_del = "DELETE FROM `content` WHERE `topic` = '$idea'";
+
+  $jibu = mysqli_query($conn, $query_del);
+  if ($jibu) {
+    echo "Record deleted successfully";
+    header("refresh: 3");
+
+  } else {
+    echo "Error deleting record: " . $conn->error;
+  }
+  // deleteContent($idea);
+}
+
+ ?>

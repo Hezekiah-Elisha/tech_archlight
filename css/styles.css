@@ -191,13 +191,13 @@ form input:focus{
 
 .blogs{
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   flex-wrap: wrap;
 }
 .blog-card{
   background-color: #2C5C6D;
   display: inline;
-  flex: 2;
+  flex: 1 0 25%;
   padding: 5px;
   margin: 5px;
   border-radius: 4px;
@@ -250,10 +250,22 @@ td{
   word-break: break-all;
 }
 
+#bars{
+  display: none;
+  font-size: 30px;
+}
 
-
-
-
+button{
+  background-color: #93B7BE;
+  padding: 4px;
+  width: 40%;
+  border: none;
+  color: white;
+  border-radius: 4px;
+}
+button:hover{
+  background-color: #0f2026;
+}
 
 
 
@@ -315,12 +327,45 @@ td{
 @media(max-width:575px){
   header{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+  }
+  #bars{
+    display: block;
+    border: 1px solid #93B7BE;
+    border-radius: 4px;
+    color: #93B7BE;
+    margin: 10px;
+    padding: 2px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  #bars:hover{
+    background-color: #93B7BE;
+    color: #070f12;
+  }
+  header .brand{
+    padding: 16px;
+  }
+  header .brand span{
+    font-size: 1.8em;
+    padding: 12px;
+  }
+  header .links {
+    width: 100vw;
+    margin: 0;
+    padding: 0px;
+    display: none;
   }
   header .links ul li{
+    list-style-type: none;
     display: block;
-    justify-content: center;
     width: 100%;
+    background-color: #93B7BE;
+    text-align: center;
+    padding: 10px;
     /* background-color: green; */
   }
   main{

@@ -1,14 +1,21 @@
-function copy(){
-  let copyText = document.getElementsByTagName('code');
+let x = document.getElementById('bars');
 
-  copyText.select();
-  copyText.setSectionRange(0,99999);
+// x.addEventListener("click", openLinks, true);
+x.addEventListener("blur", closeLinks, true);
 
-  document.execCommand("copy");
-
-  alert("Copied the text : "+copyText.value);
-  console.log("working");
+function openLinks(){
+  document.getElementById('links').style.display='block';
 }
+function closeLinks(){
+  document.getElementById('links').style.display= 'none';
+}
+
+
+// (function (window) {
+//
+// })(window);
+
+
 
 // window.onscroll = function() {scrollFunction()};
 //
