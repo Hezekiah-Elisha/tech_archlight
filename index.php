@@ -98,7 +98,7 @@
                   ."<br>Day Published: ".$rows['time_published']."</div>";
               }
             }else{
-              echo "nothing to diplay";
+              echo "nothing to display";
             }
            ?>
         </div>
@@ -136,7 +136,8 @@
       </div>
       <hr>
       <div class="partb">
-        <p>Find us on social media:</p>
+        <p>Mail us at:</p>
+        <a href="mailto:admin@thetecharchlight.com">admin@thetecharchlight.com</a>
       </div>
       <hr>
     </div>

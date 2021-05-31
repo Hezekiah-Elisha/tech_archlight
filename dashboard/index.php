@@ -128,7 +128,8 @@
       </div>
       <hr>
       <div class="partb">
-        <p>Find us on social media:</p>
+        <p>Mail us at:</p>
+        <a href="mailto:admin@thetecharchlight.com"></a>
       </div>
       <hr>
     </div>
